@@ -1,0 +1,842 @@
+filtersList =
+      (ArrayOfFilterslisttype){
+         item[] =
+            (FiltersListType){
+               filterId = "price"
+               filterName = "Cena"
+               filterType = "country"
+               filterControlType = "textbox"
+               filterDataType = "float"
+               filterIsRange = True
+               filterRelations =
+                  (FilterRelationType){
+                     relationOr =
+                        (ArrayOfString){
+                           item[] =
+                              "category",
+                              "departmentPage",
+                              "search",
+                              "special",
+                              "userId",
+                        }
+                     relationExclude =
+                        (ArrayOfString){
+                           item[] =
+                              "categoryPage",
+                              "mainPage",
+                        }
+                  }
+            },
+            (FiltersListType){
+               filterId = "state"
+               filterName = "Województwo"
+               filterType = "country"
+               filterControlType = "combobox"
+               filterDataType = "int"
+               filterIsRange = False
+               filterValues =
+                  (ArrayOfFiltervaluetype){
+                     item[] =
+                        (FilterValueType){
+                           filterValueId = "1"
+                           filterValueName = "dolnośląskie"
+                        },
+                        (FilterValueType){
+                           filterValueId = "2"
+                           filterValueName = "kujawsko-pomorskie"
+                        },
+                        (FilterValueType){
+                           filterValueId = "3"
+                           filterValueName = "lubelskie"
+                        },
+                        (FilterValueType){
+                           filterValueId = "4"
+                           filterValueName = "lubuskie"
+                        },
+                        (FilterValueType){
+                           filterValueId = "5"
+                           filterValueName = "łódzkie"
+                        },
+                        (FilterValueType){
+                           filterValueId = "6"
+                           filterValueName = "małopolskie"
+                        },
+                        (FilterValueType){
+                           filterValueId = "7"
+                           filterValueName = "mazowieckie"
+                        },
+                        (FilterValueType){
+                           filterValueId = "8"
+                           filterValueName = "opolskie"
+                        },
+                        (FilterValueType){
+                           filterValueId = "9"
+                           filterValueName = "podkarpackie"
+                        },
+                        (FilterValueType){
+                           filterValueId = "10"
+                           filterValueName = "podlaskie"
+                        },
+                        (FilterValueType){
+                           filterValueId = "11"
+                           filterValueName = "pomorskie"
+                        },
+                        (FilterValueType){
+                           filterValueId = "12"
+                           filterValueName = "śląskie"
+                        },
+                        (FilterValueType){
+                           filterValueId = "13"
+                           filterValueName = "świętokrzyskie"
+                        },
+                        (FilterValueType){
+                           filterValueId = "14"
+                           filterValueName = "warmińsko-mazurskie"
+                        },
+                        (FilterValueType){
+                           filterValueId = "15"
+                           filterValueName = "wielkopolskie"
+                        },
+                        (FilterValueType){
+                           filterValueId = "16"
+                           filterValueName = "zachodniopomorskie"
+                        },
+                  }
+               filterRelations =
+                  (FilterRelationType){
+                     relationOr =
+                        (ArrayOfString){
+                           item[] =
+                              "category",
+                              "departmentPage",
+                              "search",
+                              "special",
+                              "userId",
+                        }
+                     relationExclude =
+                        (ArrayOfString){
+                           item[] =
+                              "categoryPage",
+                              "city",
+                              "distance",
+                              "mainPage",
+                              "postCode",
+                        }
+                  }
+            },
+            (FiltersListType){
+               filterId = "userId"
+               filterName = "Identyfikator użytkownika"
+               filterType = "country"
+               filterControlType = "textbox"
+               filterDataType = "int"
+               filterIsRange = False
+            },
+            (FiltersListType){
+               filterId = "category"
+               filterName = "Kategoria"
+               filterType = "country"
+               filterControlType = "textbox"
+               filterDataType = "int"
+               filterIsRange = False
+               filterRelations =
+                  (FilterRelationType){
+                     relationExclude =
+                        (ArrayOfString){
+                           item[] =
+                              "mainPage",
+                        }
+                  }
+            },
+            (FiltersListType){
+               filterId = "search"
+               filterName = "Szukaj w tytule"
+               filterType = "country"
+               filterControlType = "textbox"
+               filterDataType = "string"
+               filterIsRange = False
+            },
+            (FiltersListType){
+               filterId = "description"
+               filterName = "Szukaj też w opisach i parametrach"
+               filterType = "country"
+               filterControlType = "checkbox"
+               filterDataType = "boolean"
+               filterIsRange = False
+               filterRelations =
+                  (FilterRelationType){
+                     relationAnd =
+                        (ArrayOfString){
+                           item[] =
+                              "search",
+                        }
+                     relationExclude =
+                        (ArrayOfString){
+                           item[] =
+                              "categoryPage",
+                              "departmentPage",
+                              "mainPage",
+                              "similar",
+                              "special",
+                        }
+                  }
+            },
+            (FiltersListType){
+               filterId = "closed"
+               filterName = "Szukaj w zakończonych"
+               filterType = "country"
+               filterControlType = "checkbox"
+               filterDataType = "boolean"
+               filterIsRange = False
+               filterRelations =
+                  (FilterRelationType){
+                     relationAnd =
+                        (ArrayOfString){
+                           item[] =
+                              "search",
+                        }
+                     relationExclude =
+                        (ArrayOfString){
+                           item[] =
+                              "categoryPage",
+                              "departmentPage",
+                              "mainPage",
+                              "similar",
+                              "special",
+                        }
+                  }
+            },
+            (FiltersListType){
+               filterId = "similar"
+               filterName = "Znajdź podobne oferty"
+               filterType = "country"
+               filterControlType = "checkbox"
+               filterDataType = "boolean"
+               filterIsRange = False
+               filterRelations =
+                  (FilterRelationType){
+                     relationAnd =
+                        (ArrayOfString){
+                           item[] =
+                              "search",
+                        }
+                     relationExclude =
+                        (ArrayOfString){
+                           item[] =
+                              "categoryPage",
+                              "closed",
+                              "departmentPage",
+                              "description",
+                              "mainPage",
+                              "special",
+                        }
+                  }
+            },
+            (FiltersListType){
+               filterId = "department"
+               filterName = "Dział"
+               filterType = "country"
+               filterControlType = "combobox"
+               filterDataType = "string"
+               filterIsRange = False
+               filterValues =
+                  (ArrayOfFiltervaluetype){
+                     item[] =
+                        (FilterValueType){
+                           filterValueId = "electronics"
+                           filterValueName = "Elektronika"
+                        },
+                        (FilterValueType){
+                           filterValueId = "fashionBeauty"
+                           filterValueName = "Moda i uroda"
+                        },
+                        (FilterValueType){
+                           filterValueId = "householdHealth"
+                           filterValueName = "Dom i zdrowie"
+                        },
+                        (FilterValueType){
+                           filterValueId = "baby"
+                           filterValueName = "Dziecko"
+                        },
+                        (FilterValueType){
+                           filterValueId = "cultureEntertainment"
+                           filterValueName = "Kultura i rozrywka"
+                        },
+                        (FilterValueType){
+                           filterValueId = "sportsLeisure"
+                           filterValueName = "Sport i wypoczynek"
+                        },
+                        (FilterValueType){
+                           filterValueId = "automotive"
+                           filterValueName = "Motoryzacja"
+                        },
+                        (FilterValueType){
+                           filterValueId = "collectionsArt"
+                           filterValueName = "Kolekcje i sztuka"
+                        },
+                        (FilterValueType){
+                           filterValueId = "companyServices"
+                           filterValueName = "Firma i usługi"
+                        },
+                  }
+               filterRelations =
+                  (FilterRelationType){
+                     relationOr =
+                        (ArrayOfString){
+                           item[] =
+                              "category",
+                              "departmentPage",
+                              "search",
+                        }
+                     relationExclude =
+                        (ArrayOfString){
+                           item[] =
+                              "categoryPage",
+                              "mainPage",
+                              "special",
+                        }
+                  }
+            },
+            (FiltersListType){
+               filterId = "condition"
+               filterName = "Stan"
+               filterType = "country"
+               filterControlType = "checkbox"
+               filterDataType = "string"
+               filterIsRange = False
+               filterValues =
+                  (ArrayOfFiltervaluetype){
+                     item[] =
+                        (FilterValueType){
+                           filterValueId = "new"
+                           filterValueName = "Nowe"
+                           filterValueCount = 69
+                        },
+                        (FilterValueType){
+                           filterValueId = "used"
+                           filterValueName = "Używane"
+                           filterValueCount = 7
+                        },
+                  }
+               filterRelations =
+                  (FilterRelationType){
+                     relationOr =
+                        (ArrayOfString){
+                           item[] =
+                              "category",
+                              "departmentPage",
+                              "search",
+                              "special",
+                              "userId",
+                        }
+                     relationExclude =
+                        (ArrayOfString){
+                           item[] =
+                              "categoryPage",
+                              "mainPage",
+                        }
+                  }
+            },
+            (FiltersListType){
+               filterId = "offerType"
+               filterName = "Rodzaj oferty"
+               filterType = "country"
+               filterControlType = "checkbox"
+               filterDataType = "string"
+               filterIsRange = False
+               filterValues =
+                  (ArrayOfFiltervaluetype){
+                     item[] =
+                        (FilterValueType){
+                           filterValueId = "buyNow"
+                           filterValueName = "Kup Teraz"
+                           filterValueCount = 85
+                        },
+                        (FilterValueType){
+                           filterValueId = "auction"
+                           filterValueName = "Licytacje"
+                           filterValueCount = 1
+                        },
+                  }
+               filterRelations =
+                  (FilterRelationType){
+                     relationOr =
+                        (ArrayOfString){
+                           item[] =
+                              "category",
+                              "departmentPage",
+                              "search",
+                              "special",
+                              "userId",
+                        }
+                     relationExclude =
+                        (ArrayOfString){
+                           item[] =
+                              "categoryPage",
+                              "mainPage",
+                        }
+                  }
+            },
+            (FiltersListType){
+               filterId = "distance"
+               filterName = "Dystans"
+               filterType = "country"
+               filterControlType = "combobox"
+               filterDataType = "string"
+               filterIsRange = False
+               filterValues =
+                  (ArrayOfFiltervaluetype){
+                     item[] =
+                        (FilterValueType){
+                           filterValueId = "10km"
+                           filterValueName = "10 km"
+                        },
+                        (FilterValueType){
+                           filterValueId = "25km"
+                           filterValueName = "25 km"
+                        },
+                        (FilterValueType){
+                           filterValueId = "50km"
+                           filterValueName = "50 km"
+                        },
+                        (FilterValueType){
+                           filterValueId = "75km"
+                           filterValueName = "75 km"
+                        },
+                        (FilterValueType){
+                           filterValueId = "100km"
+                           filterValueName = "100 km"
+                        },
+                        (FilterValueType){
+                           filterValueId = "150km"
+                           filterValueName = "150 km"
+                        },
+                        (FilterValueType){
+                           filterValueId = "200km"
+                           filterValueName = "200 km"
+                        },
+                        (FilterValueType){
+                           filterValueId = "350km"
+                           filterValueName = "350 km"
+                        },
+                        (FilterValueType){
+                           filterValueId = "500km"
+                           filterValueName = "500 km"
+                        },
+                  }
+               filterRelations =
+                  (FilterRelationType){
+                     relationAnd =
+                        (ArrayOfString){
+                           item[] =
+                              "postCode",
+                        }
+                     relationOr =
+                        (ArrayOfString){
+                           item[] =
+                              "category",
+                              "departmentPage",
+                              "search",
+                              "special",
+                              "userId",
+                        }
+                     relationExclude =
+                        (ArrayOfString){
+                           item[] =
+                              "categoryPage",
+                              "city",
+                              "mainPage",
+                              "state",
+                        }
+                  }
+            },
+            (FiltersListType){
+               filterId = "shippingTime"
+               filterName = "Czas realizacji"
+               filterType = "country"
+               filterControlType = "combobox"
+               filterDataType = "string"
+               filterIsRange = False
+               filterValues =
+                  (ArrayOfFiltervaluetype){
+                     item[] =
+                        (FilterValueType){
+                           filterValueId = "24h"
+                           filterValueName = "24 godziny"
+                        },
+                        (FilterValueType){
+                           filterValueId = "2d"
+                           filterValueName = "do 2 dni"
+                        },
+                        (FilterValueType){
+                           filterValueId = "3d"
+                           filterValueName = "do 3 dni"
+                        },
+                        (FilterValueType){
+                           filterValueId = "4d"
+                           filterValueName = "do 4 dni"
+                        },
+                        (FilterValueType){
+                           filterValueId = "5d"
+                           filterValueName = "do 5 dni"
+                        },
+                        (FilterValueType){
+                           filterValueId = "7d"
+                           filterValueName = "do 7 dni"
+                        },
+                        (FilterValueType){
+                           filterValueId = "10d"
+                           filterValueName = "do 10 dni"
+                        },
+                        (FilterValueType){
+                           filterValueId = "14d"
+                           filterValueName = "do 14 dni"
+                        },
+                        (FilterValueType){
+                           filterValueId = "21d"
+                           filterValueName = "do 21 dni"
+                        },
+                        (FilterValueType){
+                           filterValueId = "more"
+                           filterValueName = "dłużej"
+                        },
+                  }
+               filterRelations =
+                  (FilterRelationType){
+                     relationOr =
+                        (ArrayOfString){
+                           item[] =
+                              "category",
+                              "departmentPage",
+                              "search",
+                              "special",
+                              "userId",
+                        }
+                     relationExclude =
+                        (ArrayOfString){
+                           item[] =
+                              "categoryPage",
+                              "mainPage",
+                        }
+                  }
+            },
+            (FiltersListType){
+               filterId = "postCode"
+               filterName = "Kod pocztowy"
+               filterType = "country"
+               filterControlType = "textbox"
+               filterDataType = "string"
+               filterIsRange = False
+               filterRelations =
+                  (FilterRelationType){
+                     relationAnd =
+                        (ArrayOfString){
+                           item[] =
+                              "distance",
+                        }
+                     relationOr =
+                        (ArrayOfString){
+                           item[] =
+                              "category",
+                              "departmentPage",
+                              "search",
+                              "special",
+                              "userId",
+                        }
+                     relationExclude =
+                        (ArrayOfString){
+                           item[] =
+                              "categoryPage",
+                              "city",
+                              "mainPage",
+                              "state",
+                        }
+                  }
+            },
+            (FiltersListType){
+               filterId = "city"
+               filterName = "Miejscowość"
+               filterType = "country"
+               filterControlType = "textbox"
+               filterDataType = "string"
+               filterIsRange = False
+               filterRelations =
+                  (FilterRelationType){
+                     relationOr =
+                        (ArrayOfString){
+                           item[] =
+                              "category",
+                              "departmentPage",
+                              "search",
+                              "special",
+                              "userId",
+                        }
+                     relationExclude =
+                        (ArrayOfString){
+                           item[] =
+                              "categoryPage",
+                              "distance",
+                              "mainPage",
+                              "postCode",
+                              "state",
+                        }
+                  }
+            },
+            (FiltersListType){
+               filterId = "offerOptions"
+               filterName = "Opcje oferty"
+               filterType = "country"
+               filterControlType = "checkbox"
+               filterDataType = "string"
+               filterIsRange = False
+               filterValues =
+                  (ArrayOfFiltervaluetype){
+                     item[] =
+                        (FilterValueType){
+                           filterValueId = "freeShipping"
+                           filterValueName = "Wysyłka gratis"
+                        },
+                        (FilterValueType){
+                           filterValueId = "freeReturn"
+                           filterValueName = "Allegro InPost"
+                        },
+                        (FilterValueType){
+                           filterValueId = "generalDelivery"
+                           filterValueName = "odbiór w Paczkomacie"
+                        },
+                        (FilterValueType){
+                           filterValueId = "installmentAvailable"
+                           filterValueName = "Raty PayU"
+                        },
+                        (FilterValueType){
+                           filterValueId = "standardAllegro"
+                           filterValueName = "Standard Allegro"
+                        },
+                        (FilterValueType){
+                           filterValueId = "vatInvoice"
+                           filterValueName = "Faktura VAT"
+                        },
+                        (FilterValueType){
+                           filterValueId = "personalReceipt"
+                           filterValueName = "Odbiór osobisty"
+                        },
+                  }
+               filterRelations =
+                  (FilterRelationType){
+                     relationOr =
+                        (ArrayOfString){
+                           item[] =
+                              "category",
+                              "departmentPage",
+                              "search",
+                              "special",
+                              "userId",
+                        }
+                     relationExclude =
+                        (ArrayOfString){
+                           item[] =
+                              "categoryPage",
+                              "mainPage",
+                        }
+                  }
+            },
+            (FiltersListType){
+               filterId = "endingTime"
+               filterName = "Kończące się w ciągu"
+               filterType = "country"
+               filterControlType = "combobox"
+               filterDataType = "string"
+               filterIsRange = False
+               filterValues =
+                  (ArrayOfFiltervaluetype){
+                     item[] =
+                        (FilterValueType){
+                           filterValueId = "1h"
+                           filterValueName = "1 godziny"
+                        },
+                        (FilterValueType){
+                           filterValueId = "2h"
+                           filterValueName = "2 godzin"
+                        },
+                        (FilterValueType){
+                           filterValueId = "3h"
+                           filterValueName = "3 godzin"
+                        },
+                        (FilterValueType){
+                           filterValueId = "4h"
+                           filterValueName = "4 godzin"
+                        },
+                        (FilterValueType){
+                           filterValueId = "5h"
+                           filterValueName = "5 godzin"
+                        },
+                        (FilterValueType){
+                           filterValueId = "12h"
+                           filterValueName = "12 godzin"
+                        },
+                        (FilterValueType){
+                           filterValueId = "24h"
+                           filterValueName = "24 godzin"
+                        },
+                        (FilterValueType){
+                           filterValueId = "2d"
+                           filterValueName = "2 dni"
+                        },
+                        (FilterValueType){
+                           filterValueId = "3d"
+                           filterValueName = "3 dni"
+                        },
+                        (FilterValueType){
+                           filterValueId = "4d"
+                           filterValueName = "4 dni"
+                        },
+                        (FilterValueType){
+                           filterValueId = "5d"
+                           filterValueName = "5 dni"
+                        },
+                        (FilterValueType){
+                           filterValueId = "6d"
+                           filterValueName = "6 dni"
+                        },
+                        (FilterValueType){
+                           filterValueId = "7d"
+                           filterValueName = "7 dni"
+                        },
+                  }
+               filterRelations =
+                  (FilterRelationType){
+                     relationOr =
+                        (ArrayOfString){
+                           item[] =
+                              "category",
+                              "departmentPage",
+                              "search",
+                              "special",
+                              "userId",
+                        }
+                     relationExclude =
+                        (ArrayOfString){
+                           item[] =
+                              "categoryPage",
+                              "mainPage",
+                        }
+                  }
+            },
+            },
+            (FiltersListType){
+               filterId = "startingTime"
+               filterName = "Wystawione w ciągu"
+               filterType = "country"
+               filterControlType = "combobox"
+               filterDataType = "string"
+               filterIsRange = False
+               filterValues =
+                  (ArrayOfFiltervaluetype){
+                     item[] =
+                        (FilterValueType){
+                           filterValueId = "1h"
+                           filterValueName = "1 godziny"
+                        },
+                        (FilterValueType){
+                           filterValueId = "2h"
+                           filterValueName = "2 godzin"
+                        },
+                        (FilterValueType){
+                           filterValueId = "3h"
+                           filterValueName = "3 godzin"
+                        },
+                        (FilterValueType){
+                           filterValueId = "4h"
+                           filterValueName = "4 godzin"
+                        },
+                        (FilterValueType){
+                           filterValueId = "5h"
+                           filterValueName = "5 godzin"
+                        },
+                        (FilterValueType){
+                           filterValueId = "12h"
+                           filterValueName = "12 godzin"
+                        },
+                        (FilterValueType){
+                           filterValueId = "24h"
+                           filterValueName = "24 godzin"
+                        },
+                        (FilterValueType){
+                           filterValueId = "2d"
+                           filterValueName = "2 dni"
+                        },
+                        (FilterValueType){
+                           filterValueId = "3d"
+                           filterValueName = "3 dni"
+                        },
+                        (FilterValueType){
+                           filterValueId = "4d"
+                           filterValueName = "4 dni"
+                        },
+                        (FilterValueType){
+                           filterValueId = "5d"
+                           filterValueName = "5 dni"
+                        },
+                        (FilterValueType){
+                           filterValueId = "6d"
+                           filterValueName = "6 dni"
+                        },
+                        (FilterValueType){
+                           filterValueId = "7d"
+                           filterValueName = "7 dni"
+                        },
+                  }
+               filterRelations =
+                  (FilterRelationType){
+                     relationOr =
+                        (ArrayOfString){
+                           item[] =
+                              "category",
+                              "departmentPage",
+                              "search",
+                              "special",
+                              "userId",
+                        }
+                     relationExclude =
+                        (ArrayOfString){
+                           item[] =
+                              "categoryPage",
+                              "mainPage",
+                        }
+                  }
+            },
+            (FiltersListType){
+               filterId = "special"
+               filterName = "Typ listingu"
+               filterType = "country"
+               filterControlType = "combobox"
+               filterDataType = "string"
+               filterIsRange = False
+               filterValues =
+                  (ArrayOfFiltervaluetype){
+                     item[] =
+                        (FilterValueType){
+                           filterValueId = "new"
+                           filterValueName = "Najnowsze"
+                        },
+                        (FilterValueType){
+                           filterValueId = "ending"
+                           filterValueName = "Kończące się"
+                        },
+                  }
+               filterRelations =
+                  (FilterRelationType){
+                     relationExclude =
+                        (ArrayOfString){
+                           item[] =
+                              "categoryPage",
+                              "closed",
+                              "department",
+                              "departmentPage",
+                              "description",
+                              "mainPage",
+                              "similar",
+                        }
+                  }
+            },
+      }

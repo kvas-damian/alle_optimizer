@@ -17,6 +17,6 @@ option.filterValueId = val
 options = client.factory.create("ArrayOfFilteroptionstype")
 options.item = option
 
-alleRes = client.service.doGetItemsList(WEBAPI_KEY, COUNTRY_ID, options, resultScope = 3, resultSize = 1000)
+alleRes = client.service.doGetItemsList(WEBAPI_KEY, COUNTRY_ID, options, resultScope = 0, resultSize = 1000)
 
 print alleRes
