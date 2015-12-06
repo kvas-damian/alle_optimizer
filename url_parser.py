@@ -9,6 +9,7 @@ class UrlParser:
         params = urlparse.parse_qs(url)
 
 # TODO get category
+        parsed_params.update(self._get_search(params))
         parsed_params.update(self._get_offer_type(params))
         parsed_params.update(self._get_price(params))
         parsed_params.update(self._get_condition(params))
@@ -19,6 +20,12 @@ class UrlParser:
         for simple_param in simple_params:
             parsed_params.update(self._get_simple(params, simple_param))
         return parsed_params
+
+    def _get_search(self, params):
+        out = {}
+        if 'string' in params:
+            out['search'] = params['string'][0]
+        return out
 
     def _get_offer_type(self, params):
         out = {}
