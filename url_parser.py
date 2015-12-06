@@ -22,10 +22,12 @@ class UrlParser:
 
     def _get_offer_type(self, params):
         out = {}
+        if 'offerTypeBuyNow' in params or 'offerTypeAuction' in params:
+            out['offerType'] = []
         if 'offerTypeBuyNow' in params:
-            out['offerType'] = 'buyNow'
+            out['offerType'].append('buyNow')
         if 'offerTypeAuction' in params:
-            out['offerType'] = 'auction'
+            out['offerType'].append('auction')
         return out
 
     def _get_simple(self, params, param_name):
@@ -47,10 +49,12 @@ class UrlParser:
 
     def _get_condition(self, params):
         out = {}
+        if 'buyNew' in params or 'buyUsed' in params:
+            out['condition'] = []
         if 'buyNew' in params:
-            out['condition'] = 'new'
+            out['condition'].append('new')
         if 'buyUsed' in params:
-            out['condition'] = 'used'
+            out['condition'].append('used')
         return out
 
     def _get_offer_options(self, params):
