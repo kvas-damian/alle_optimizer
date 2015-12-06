@@ -1,9 +1,5 @@
+from config import WEBAPI_KEY, COUNTRY_ID, wsdl
 from suds.client import Client
-
-WEBAPI_KEY = "a776ff96"
-COUNTRY_ID = 1
-
-wsdl = "https://webapi.allegro.pl/service.php?wsdl"
 
 client = Client(wsdl)
 
