@@ -1,6 +1,7 @@
-from config import WEBAPI_KEY, COUNTRY_ID, wsdl
+from config import wsdl
 from url_parser import UrlParser
 from alle_options import AlleOptions
+from api_methods import ApiMethods
 from suds.client import Client
 
 client = Client(wsdl)
@@ -13,8 +14,15 @@ options = alle_options_parser.get_options(params)
 
 # TODO city UTF
 print options
-alleRes = client.service.doGetItemsList(WEBAPI_KEY, COUNTRY_ID, options, resultScope = 3, resultSize = 1000)
 
-print alleRes
+api_methods = ApiMethods(client)
+
+api_version = api_methods.get_version()
+session = api_methods.get_session(api_version)
+
+# items = api_methods.get_items_list(options)
+#
+# for item in items:
+#     print item.itemId, item.itemTitle
 
 
