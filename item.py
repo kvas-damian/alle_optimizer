@@ -1,6 +1,8 @@
 from math import ceil
 
 class Item(object):
+    personal_receipt_ids = [10, 13]
+
     def __init__(self, id, name, price):
         self.id = id
         self.name = name
@@ -10,9 +12,14 @@ class Item(object):
         self.shipping_options = shipping_options
 
     def get_lowest_shipping_price(self, items_count):
+        # TODO skip not registered
         min_price = None
 
         for shipping_option in self.shipping_options:
+            if shipping_option.postageId in self.personal_receipt_ids:
+                # don't include personal receipts
+                continue
+
             if shipping_option.postageFreeShipping:
                 current_price = 0
             else:

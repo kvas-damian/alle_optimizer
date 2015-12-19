@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from config import wsdl
+from item import Item
 from url_parser import UrlParser
 from alle_options import AlleOptions
 from api_methods import ApiMethods
@@ -57,16 +58,15 @@ session = api_methods.get_session(api_version)
 
 items = api_methods.get_items_list(options)
 
-item_ids = []
-for item in items:
-    print item.itemId, item.itemTitle
-    item_ids.append(item.itemId)
+item_ids = [x.itemId for x in items]
 
-    if len(item_ids) == 2:
-        items_info = api_methods.get_items_info(session, item_ids)
-        item_ids = []
-        # TODO
-        for item_info in items_info:
-            for postage_option in item_info.itemPostageOptions.item:
-                print postage_option.postageAmount, postage_option.postagePackSize, postage_option.postageFreeShipping, shipment_options[postage_option.postageId]
-        exit()
+for i in xrange(0, len(item_ids), 25):
+    current_item_ids = item_ids[i:i+25]
+    items_info = api_methods.get_items_info(session, current_item_ids)
+
+    for item_info in items_info:
+        print item_info.itemInfo.itId, item_info.itemInfo.itName, item_info.itemInfo.itBuyNowPrice
+        item = Item(item_info.itemInfo.itId, item_info.itemInfo.itName, item_info.itemInfo.itBuyNowPrice)
+
+        item.add_shiping_options([x for x in item_info.itemPostageOptions.item])
+        print item.get_lowest_shipping_price(3)
