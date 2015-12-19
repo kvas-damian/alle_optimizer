@@ -18,3 +18,11 @@ class ApiMethods:
 
     def get_session(self, version):
         return self.client.service.doLoginEnc(ALLEGRO_LOGIN, hashlib.sha256(ALLEGRO_PASSWORD).digest().encode('base64'), COUNTRY_ID, WEBAPI_KEY, version).sessionHandlePart
+
+    def get_items_info(self, session, item_ids):
+        item_ids_struct = self.client.factory.create('ArrayOfLong')
+        item_ids_struct.item = item_ids
+        return self.client.service.doGetItemsInfo(session, item_ids_struct, getPostageOptions=1).arrayItemListInfo.item
+
+    def get_shipment_data(self):
+        print self.client.service.doGetShipmentData(COUNTRY_ID, WEBAPI_KEY)
