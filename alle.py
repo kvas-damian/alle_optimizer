@@ -41,15 +41,12 @@ shipment_options = {
 }
 
 client = Client(wsdl)
-url = "http://allegro.pl/listing/listing.php?order=d&string=samsung&bmatch=engagement-v6-promo-sm-sqm-ele-1-1-1130&buyNew=1&offerTypeBuyNow=1&price_to=1000&city=Warszawa&vat_invoice=1&generalDelivery_rec=1&standard_allegro=1&startingTime=7"
+url = "http://allegro.pl/listing/listing.php?generalDelivery_rec=1&vat_invoice=1&standard_allegro=1&startingTime=7&buyNew=1&offerTypeBuyNow=1&order=d&price_to=1000&string=samsung&bmatch=engagement-v6-promo-sm-sqm-fall-ele-1-1-1214&city=Pozna%C5%84"
 url_parser = UrlParser()
 params = url_parser.parse(url)
 
 alle_options_parser = AlleOptions(client)
 options = alle_options_parser.get_options(params)
-
-# TODO city UTF
-print options
 
 api_methods = ApiMethods(client)
 
@@ -59,14 +56,16 @@ session = api_methods.get_session(api_version)
 items = api_methods.get_items_list(options)
 
 item_ids = [x.itemId for x in items]
+calculated_items = []
 
 for i in xrange(0, len(item_ids), 25):
     current_item_ids = item_ids[i:i+25]
     items_info = api_methods.get_items_info(session, current_item_ids)
 
     for item_info in items_info:
-        print item_info.itemInfo.itId, item_info.itemInfo.itName, item_info.itemInfo.itBuyNowPrice
-        item = Item(item_info.itemInfo.itId, item_info.itemInfo.itName, item_info.itemInfo.itBuyNowPrice)
+        item = Item(item_info.itemInfo, [x for x in item_info.itemPostageOptions.item])
+        print item.get('id'), item.get('name'), item.get('buyNowPrice')
+        print item.get_url()
 
-        item.add_shiping_options([x for x in item_info.itemPostageOptions.item])
         print item.get_lowest_shipping_price(3)
+        calculated_items.append(item)

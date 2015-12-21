@@ -23,14 +23,13 @@ class ItemTestCase(unittest.TestCase):
 
     @data_provider(test_cases)
     def test_get_lowest_price(self, postage_price, ammout_add, package_size, free_shipping, items_count, expected):
-        item = Item(12, "test", 10.12)
         shipping_option = Object()
         shipping_option.postageId = 1
         shipping_option.postageAmount = postage_price
         shipping_option.postageAmountAdd = ammout_add
         shipping_option.postagePackSize = package_size
         shipping_option.postageFreeShipping = free_shipping
-        item.add_shiping_options([shipping_option])
+        item = Item(Object(), [shipping_option])
         self.assertAlmostEqual(item.get_lowest_shipping_price(items_count), expected)
 
 if __name__ == '__main__':

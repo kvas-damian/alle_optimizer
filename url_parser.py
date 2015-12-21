@@ -8,7 +8,7 @@ class UrlParser:
         parsed_params = {}
         params = urlparse.parse_qs(url)
 
-# TODO get category
+        parsed_params.update(self._get_category(params, urlparse.urlparse(url).path))
         parsed_params.update(self._get_search(params))
         parsed_params.update(self._get_offer_type(params))
         parsed_params.update(self._get_price(params))
@@ -21,10 +21,21 @@ class UrlParser:
             parsed_params.update(self._get_simple(params, simple_param))
         return parsed_params
 
+#TODO finish category
+    def _get_category(self, params, path):
+        out = {}
+        path_parts = path.split('-')
+        if 'id' in params:
+            out['category'] = params['id'][0]
+        elif len(path_parts) > 1:
+            out['category'] = path_parts[-1]
+
+        return out
+
     def _get_search(self, params):
         out = {}
         if 'string' in params:
-            out['search'] = params['string'][0]
+            out['search'] = params['string'][0].decode('UTF-8')
         return out
 
     def _get_offer_type(self, params):
@@ -40,7 +51,7 @@ class UrlParser:
     def _get_simple(self, params, param_name):
         out = {}
         if param_name in params:
-                out[param_name] = params[param_name][0]
+                out[param_name] = params[param_name][0].decode('UTF-8')
         return out
 
     def _get_price(self, params):
